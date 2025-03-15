@@ -3,10 +3,10 @@ import React from "react";
 
 export default function SkillCard({ title, description, skills }) {
   return (
-    <div className="bg-[#181818] p-5 rounded-lg shadow-md hover:shadow-purple-500 hover:scale-105 transition-all duration-300 border border-gray-700 text-center">
+    <div className="bg-[#181818] p-5 rounded-lg shadow-md hover:shadow-purple-500 hover:scale-105 transition-all duration-300 border border-gray-700 text-center w-full">
       <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
       <p className="text-gray-400 text-sm mb-4">{description}</p>
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         {skills.map((skill) => (
           <a
             key={skill}

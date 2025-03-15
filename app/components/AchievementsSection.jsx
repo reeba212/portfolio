@@ -36,7 +36,7 @@ export default function Achievements() {
 
   return (
     <section className="py-12 text-white">
-      <div className="container mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold mb-8 text-center text-white">Achievements</h2>
         <ul className="space-y-6">
           {achievements.map((achievement, index) => (
@@ -44,8 +44,10 @@ export default function Achievements() {
               key={index}
               className="flex items-start space-x-4 p-5 bg-[#181818] bg-opacity-60 rounded-lg shadow-md border border-[#3E075F] transition-transform transform hover:scale-105 hover:shadow-pink-500"
             >
+              {/* Icon */}
               <div className="text-3xl">{achievement.icon}</div>
-              <p className="text-lg text-gray-300">{achievement.text}</p>
+
+              <p className="text-lg text-gray-300 flex-1">{achievement.text}</p>
             </li>
           ))}
         </ul>
