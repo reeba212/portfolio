@@ -51,6 +51,15 @@ const projectData = [
       previewUrl: 'https://medium.com/@reebaq2/real-world-ml-use-cases-apache-beam-gsoc-2023-report-edeb313d43ba#38f1'
   },
   {
+    id: 11,
+    title: "Personal Portfolio Website",
+    description: "Designed and developed a personal portfolio website using React, Tailwind CSS, and Framer Motion. Showcases projects, skills, and achievements with a sleek, responsive UI and smooth animations.",
+    image: "/images/projects/portfolio.png",
+    tag: ['All', 'Web'],
+    gitUrl: 'https://github.com/reeba212/portfolio',
+    previewUrl: '/'
+},
+  {
       id: 5,
       title: "IMDB Reviews Sentiment Analysis",
       description: "Built an NLP model using LSTM to analyze IMDB movie reviews. Achieved 88% accuracy in classifying reviews as positive or negative using TensorFlow and word embeddings.",

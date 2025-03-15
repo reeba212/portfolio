@@ -31,7 +31,7 @@ const skillsData = [
   {
     title: "Web Development",
     description: "Building responsive and interactive web apps.",
-    skills: ["HTML", "CSS", "JavaScript", "React", "Flask", "Node.js"],
+    skills: ["HTML", "CSS", "JavaScript", "React", "Flask", "Next.js"],
   },
 ];
 
