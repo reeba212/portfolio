@@ -55,7 +55,7 @@ export default function EmailSection() {
               id="email" 
               required 
               placeholder="name@example.com"
-              className="p-2 w-full border border-gray-300 rounded-md text-sm"
+              className="p-2 w-full border border-gray-300 rounded-md text-sm bg-[#181818] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
 
@@ -67,7 +67,7 @@ export default function EmailSection() {
               id="subject" 
               required 
               placeholder="Just saying hi!"
-              className="p-2 w-full border border-gray-300 rounded-md text-sm"
+              className="p-2 w-full border border-gray-300 rounded-md text-sm bg-[#181818] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
 
@@ -78,7 +78,7 @@ export default function EmailSection() {
               id="message" 
               required 
               placeholder="Let's talk about..."
-              className="p-2 w-full border border-gray-300 rounded-md text-sm"
+              className="p-2 w-full border border-gray-300 rounded-md text-sm bg-[#181818] text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
 
