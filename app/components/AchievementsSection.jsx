@@ -5,7 +5,7 @@ import { FaTrophy, FaStar, FaBook, FaMedal, FaRobot, FaLaptopCode } from 'react-
 export default function Achievements() {
   const achievements = [
     {
-      icon: <FaTrophy className="text-pink-300" />, 
+      icon: <FaTrophy className="text-pink-300" />,
       text: 'Selected for GSoC twice (2023 & 2024) with Apache Beam, working under the guidance of Google software engineers.',
     },
     {
@@ -42,12 +42,12 @@ export default function Achievements() {
           {achievements.map((achievement, index) => (
             <li
               key={index}
-              className="flex items-start space-x-4 p-5 bg-[#181818] bg-opacity-60 rounded-lg shadow-md border border-[#3E075F] transition-transform transform hover:scale-105 hover:shadow-pink-500"
+              className="p-5 bg-[#181818] bg-opacity-60 rounded-lg shadow-md border border-[#3E075F] transition-transform transform hover:scale-105 hover:shadow-pink-500 flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4"
             >
               {/* Icon */}
               <div className="text-3xl">{achievement.icon}</div>
 
-              <p className="text-lg text-gray-300 flex-1">{achievement.text}</p>
+              <p className="text-lg text-gray-300 text-center sm:text-left">{achievement.text}</p>
             </li>
           ))}
         </ul>
