@@ -39,7 +39,7 @@ const projectData = [
       image: "/images/projects/batch-image-processing.png",
       tag: ['All', 'AI/ML', 'Computer Vision', 'Open Source'],
       gitUrl: 'https://github.com/apache/beam/pull/27034',
-      previewUrl: '/https://medium.com/@reebaq2/real-world-ml-use-cases-apache-beam-gsoc-2023-report-edeb313d43ba#6072'
+      previewUrl: 'https://medium.com/@reebaq2/real-world-ml-use-cases-apache-beam-gsoc-2023-report-edeb313d43ba#6072'
   },
   {
       id: 6,
@@ -48,7 +48,7 @@ const projectData = [
       image: "/images/projects/speech-emotion.png",
       tag: ['All', 'AI/ML', 'NLP', 'Open Source'],
       gitUrl: 'https://github.com/apache/beam/pull/28172',
-      previewUrl: '/https://medium.com/@reebaq2/real-world-ml-use-cases-apache-beam-gsoc-2023-report-edeb313d43ba#38f1'
+      previewUrl: 'https://medium.com/@reebaq2/real-world-ml-use-cases-apache-beam-gsoc-2023-report-edeb313d43ba#38f1'
   },
   {
       id: 5,
