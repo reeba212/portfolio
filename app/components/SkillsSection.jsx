@@ -35,7 +35,7 @@ const skillsData = [
   },
 ];
 
-const programmingLanguages = ["Python", "Java", "C++", "C", "SQL"];
+const programmingLanguages = ["Python", "Java", "C++", "C", "JavaScript"];
 
 export default function SkillsSection() {
   return (
