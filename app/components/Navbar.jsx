@@ -8,8 +8,12 @@ import MenuOverlay from './MenuOverlay';
 
 const navLinks = [
     { title: "About", path: "#about" },
+    { title: "Experience", path: "#experiences" },
+    { title: "Education", path: "#education" },
+    { title: "Skills", path: "#skills" },
     { title: "Projects", path: "#projects" },
-    { title: "Contact", path: "#contact" }
+    { title: "Achievements", path: "#achievements" },
+    { title: "Contact", path: "#contact" },
 ];
 
 export default function Navbar() {

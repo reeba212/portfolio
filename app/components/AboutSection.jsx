@@ -12,7 +12,8 @@ const TAB_DATA = [
             <div>
                 <ul className="list-disc pl-5 space-y-2">
                     {[
-                        { name: "BTech in Computer Science specializing in AI/ML - Guru Gobind Singh Indraprastha University", url: "https://ipu.admissions.nic.in/" },
+                        { name: "MS in Computer Science - Georgia Institute of Technology", url: "https://drive.google.com/file/d/1FxOTcCzAlByV_3DWtQ_AHabSfwi4Co1G/view?usp=sharing"},
+                        { name: "BTech in Computer Science specializing in AI/ML - Guru Gobind Singh Indraprastha University", url: "https://drive.google.com/file/d/1ayl1pj9LArVJIDTfNtmXelnTQ0tjJtlE/view?usp=sharing" },
                         { name: "AWS Machine Learning Nanodegree - Udacity", url: "https://drive.google.com/file/d/1SdXA2gSXTyB3z0g8vyxOstpmxLeh0CeE/view?usp=drive_link" },
                         { name: "AI Programming in Python Nanodegree - Udacity", url: "https://drive.google.com/file/d/1WzAHBXY2963fZxzArBH12Q0SzfhzX4kQ/view?usp=drive_link" },
                         { name: "St. Joseph's Academy (High School)", url: "https://www.sjdelhi.com/" },

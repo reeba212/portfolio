@@ -35,7 +35,7 @@ export default function Achievements() {
   ];
 
   return (
-    <section className="py-12 text-white">
+    <section className="py-12 text-white" id="achievements">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold mb-8 text-center text-white">Achievements</h2>
         <ul className="space-y-6">

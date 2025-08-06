@@ -3,12 +3,25 @@ import React from 'react';
 const experiences = [
   {
     company: 'IBM',
-    role: 'Software Development Engineer Intern',
-    duration: 'Jan 2025 - Jun 2025',
-    techStack: ['Ansible', 'Chef', 'Automation'],
+    role: 'Software Developer',
+    duration: 'Jul 2025 - Present',
+    techStack: ['ORM', 'Python', 'Cloud Orchestration', 'API'],
     description: [
-      'Worked with the Load Balancer team on Citrix SDX and load balancing solutions.',
-      'Focused on automating infrastructure processes with Ansible.'
+      'Developing core components of IBM Classic Cloud infrastructure.',
+      'Implementing ORM-based migrations for cloud service data models.',
+      'Creating internal tools and APIs to automate infra workflows.',
+      'Leveraging AIOps and agentic AI via watsonx.ai for efficiency.'
+    ]
+  },
+  {
+    company: 'IBM',
+    role: 'Software Development Engineer Intern',
+    duration: 'Jan 2025 - Jul 2025',
+    techStack: ['AI', 'Python', 'Automation', 'Ansible'],
+    description: [
+      'Integrated agentic AI to automate issue resolution in infra ops.',
+      'Automated Citrix SDX upgrades using Ansible and Nitro APIs.',
+      'Improved upgrade workflows for RHEL, iSCSI-NFS, and Uptycs.'
     ]
   },
   {

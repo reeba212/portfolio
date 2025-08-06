@@ -8,6 +8,7 @@ import EmailSection from "./components/EmailSection";
 import AchievementsSection from "./components/AchievementsSection";
 import Footer from "./components/Footer";
 import Experiences from "./components/Experiences";
+import EducationSection from "./components/EducationSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <HeroSection/>
         <AboutSection/>
         <Experiences/>
+        <EducationSection/>
         <SkillsSection/>
         <ProjectsSection/>
         <AchievementsSection/>
