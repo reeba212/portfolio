@@ -6,38 +6,6 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const TAB_DATA = [
     {
-        title: "Education",
-        id: "education",
-        content: (
-            <div>
-                <ul className="list-disc pl-5 space-y-2">
-                    {[
-                        { name: "MS in Computer Science - Georgia Institute of Technology", url: "https://drive.google.com/file/d/1FxOTcCzAlByV_3DWtQ_AHabSfwi4Co1G/view?usp=sharing"},
-                        { name: "BTech in Computer Science specializing in AI/ML - Guru Gobind Singh Indraprastha University", url: "https://drive.google.com/file/d/1ayl1pj9LArVJIDTfNtmXelnTQ0tjJtlE/view?usp=sharing" },
-                        { name: "AWS Machine Learning Nanodegree - Udacity", url: "https://drive.google.com/file/d/1SdXA2gSXTyB3z0g8vyxOstpmxLeh0CeE/view?usp=drive_link" },
-                        { name: "AI Programming in Python Nanodegree - Udacity", url: "https://drive.google.com/file/d/1WzAHBXY2963fZxzArBH12Q0SzfhzX4kQ/view?usp=drive_link" },
-                        { name: "St. Joseph's Academy (High School)", url: "https://www.sjdelhi.com/" },
-                    ].map((item) => (
-                        <li key={item.name} className="flex gap-2 items-center justify-between">
-                            <div className="flex gap-2 items-center">
-                                <span className="text-gray-400">•</span>
-                                <a
-                                    href={item.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text text-sm font-medium hover:brightness-125 transition duration-200"
-                                >
-                                    {item.name}
-                                </a>
-                            </div>
-                            <FaExternalLinkAlt className="w-4 h-4 md:w-3.5 md:h-3.5 text-gray-400 shrink-0" />
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        ),
-    },
-    {
         title: "Certifications",
         id: "certifications",
         content: (
@@ -105,7 +73,7 @@ const TAB_DATA = [
 ];
 
 export default function AboutSection() {
-    const [tab, setTab] = useState("education");
+    const [tab, setTab] = useState("certifications");
     const [isPending, startTransition] = useTransition();
 
     const handleTabChange = (id) => {
@@ -129,7 +97,7 @@ export default function AboutSection() {
                 <div className="text-left flex flex-col h-full">
                     <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
                     <p className="text-base lg:text-lg">
-                        As a passionate software developer and machine learning enthusiast, I thrive on solving complex problems and building impactful solutions. With experience in open-source contributions, cloud computing, and data-driven applications, I have worked on projects ranging from scalable data pipelines to real-world machine learning workflows. My journey includes internships at IBM and NTPC, along with two Google Summer of Code contributions to Apache Beam, where I enhanced its YAML SDK with advanced features. I am always eager to learn, innovate, and collaborate on projects that push the boundaries of technology.
+                        As a passionate software developer and machine learning enthusiast, I thrive on solving complex problems and building impactful solutions. With experience in as a Software Developer at IBM Cloud, open-source contributions, cloud computing, and data-driven applications, I have worked on projects ranging from scalable data pipelines to real-world machine learning workflows. My journey includes internships at IBM and NTPC, along with two Google Summer of Code contributions to Apache Beam, where I enhanced its YAML SDK with advanced features. I am always eager to learn, innovate, and collaborate on projects that push the boundaries of technology.
                     </p>
                     <div className="flex flex-row mt-8 space-x-4">
                         {TAB_DATA.map((tabItem) => (
