@@ -6,6 +6,35 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 const TAB_DATA = [
     {
+        title: "Publications",
+        id: "publications",
+        content: (
+            <div>
+                <ul className="list-disc pl-5 space-y-2">
+                    {[
+                        { name: "Explainable AI techniques used in healthcare", url: "https://pubs.aip.org/aip/acp/article/3121/1/040005/3303044/Explainable-AI-techniques-used-in-healthcare" },
+                        { name: "Multimodal machine learning approach for detecting spyware and ransomware", url: "https://ieeexplore.ieee.org/document/10581161" },
+                    ].map((item) => (
+                        <li key={item.name} className="flex gap-2 items-center justify-between">
+                            <div className="flex gap-2 items-center">
+                                <span className="text-gray-400">•</span>
+                                <a
+                                    href={item.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text text-sm font-medium hover:brightness-125 transition duration-200"
+                                >
+                                    {item.name}
+                                </a>
+                            </div>
+                            <FaExternalLinkAlt className="w-4 h-4 md:w-3.5 md:h-3.5 text-gray-400 shrink-0" />
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        ),
+    },
+    {
         title: "Certifications",
         id: "certifications",
         content: (
@@ -41,39 +70,10 @@ const TAB_DATA = [
             </div>
         ),
     },
-    {
-        title: "Publications",
-        id: "publications",
-        content: (
-            <div>
-                <ul className="list-disc pl-5 space-y-2">
-                    {[
-                        { name: "Explainable AI techniques used in healthcare", url: "https://pubs.aip.org/aip/acp/article/3121/1/040005/3303044/Explainable-AI-techniques-used-in-healthcare" },
-                        { name: "Multimodal machine learning approach for detecting spyware and ransomware", url: "https://ieeexplore.ieee.org/document/10581161" },
-                    ].map((item) => (
-                        <li key={item.name} className="flex gap-2 items-center justify-between">
-                            <div className="flex gap-2 items-center">
-                                <span className="text-gray-400">•</span>
-                                <a
-                                    href={item.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text text-sm font-medium hover:brightness-125 transition duration-200"
-                                >
-                                    {item.name}
-                                </a>
-                            </div>
-                            <FaExternalLinkAlt className="w-4 h-4 md:w-3.5 md:h-3.5 text-gray-400 shrink-0" />
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        ),
-    },
 ];
 
 export default function AboutSection() {
-    const [tab, setTab] = useState("certifications");
+    const [tab, setTab] = useState("publications");
     const [isPending, startTransition] = useTransition();
 
     const handleTabChange = (id) => {
@@ -97,7 +97,7 @@ export default function AboutSection() {
                 <div className="text-left flex flex-col h-full">
                     <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
                     <p className="text-base lg:text-lg">
-                        As a passionate software developer and machine learning enthusiast, I thrive on solving complex problems and building impactful solutions. With experience in as a Software Developer at IBM Cloud, open-source contributions, cloud computing, and data-driven applications, I have worked on projects ranging from scalable data pipelines to real-world machine learning workflows. My journey includes internships at IBM and NTPC, along with two Google Summer of Code contributions to Apache Beam, where I enhanced its YAML SDK with advanced features. I am always eager to learn, innovate, and collaborate on projects that push the boundaries of technology.
+                        I’m a Software Developer at IBM Cloud and an incoming MSCS student at Georgia Tech, specializing in Computing Systems. With a strong background in cloud computing, machine learning, and open-source, I thrive on solving complex problems and building impactful solutions. My journey spans two Google Summer of Code contributions with Apache Beam, where I enhanced its YAML SDK, internships at IBM and NTPC, and multiple research-driven AI/ML projects. I’m passionate about leveraging code, data, and curiosity to create scalable systems and innovative technologies that make a difference.
                     </p>
                     <div className="flex flex-row mt-8 space-x-4">
                         {TAB_DATA.map((tabItem) => (

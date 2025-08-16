@@ -9,6 +9,7 @@ import AchievementsSection from "./components/AchievementsSection";
 import Footer from "./components/Footer";
 import Experiences from "./components/Experiences";
 import EducationSection from "./components/EducationSection";
+import HighlightsSection from "./components/HighlightsSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar/>
       <div className="container mt-24 mx-auto px-12 py-4">
         <HeroSection/>
+        <HighlightsSection/>
         <AboutSection/>
         <Experiences/>
         <EducationSection/>

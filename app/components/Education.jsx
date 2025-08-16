@@ -22,26 +22,6 @@ const educationData = [
       }
     },
     {
-      degree: 'AWS Machine Learning Nanodegree',
-      school: 'Udacity',
-      duration: 'Apr 2024 - Aug 2024',
-      location: 'Online',
-      description: 'Learned production-grade ML using Amazon SageMaker, model deployment, and ML pipelines.',
-      links: {
-        certificate: 'https://drive.google.com/file/d/1oeUPskSWuMYbrP7zCKABKm6fXpgkf7TD/view?usp=sharing'
-      }
-    },
-    {
-      degree: 'AI Programming in Python Nanodegree',
-      school: 'Udacity',
-      duration: 'Jun 2023 - Nov 2023',
-      location: 'Online',
-      description: 'Covered Python, NumPy, Pandas, and foundational Neural Networks for AI development.',
-      links: {
-        certificate: 'https://drive.google.com/file/d/1DqvLA2jjGdZRtkyk2dwKrMSTdX3NDvQh/view?usp=sharing'
-      }
-    },
-    {
       degree: 'High School',
       school: "St. Joseph's Academy",
       duration: 'Graduated July 2021',
