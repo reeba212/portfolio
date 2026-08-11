@@ -17,8 +17,8 @@ export default function HeroSection() {
           transition={{ duration: 0.5 }} 
           className="md:col-span-7 place-self-center text-center md:text-left"
         >
-          <h1 className="text-white mb-4 text-5xl sm:text-4xl md:text-4xl lg:text-5xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+          <h1 className="font-heading text-ink mb-4 text-5xl sm:text-4xl md:text-4xl lg:text-5xl lg:leading-normal font-semibold text-balance">
+            <span className="text-primary">
               Hello, I'm
             </span>
             <br/>
@@ -40,41 +40,56 @@ export default function HeroSection() {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-lg mb-6 sm:text-lg lg:text-xl">
+          <p className="text-ink-soft text-lg mb-6 sm:text-lg lg:text-xl">
             Turning ideas into reality with code, curiosity, and creativity.
           </p>
-          <div>
-            <button 
-              onClick={() => window.location.href = '#contact'} 
-              className="group relative px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white transition-all duration-300 hover:opacity-80">
-              Hire Me
+          <div className="flex flex-wrap gap-3">
+            <button
+              onClick={() => window.location.href = '#contact'}
+              className="px-6 py-3 rounded-full bg-primary text-surface font-bold shadow-[0_10px_24px_-10px_var(--primary)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105">
+              Connect with me
             </button>
 
-            <button 
+            <button
               onClick={() => window.open('https://drive.google.com/file/d/1Rj2GMPuareROcTheJCZJnI9kXgVjfAAG/view?usp=drive_link', '_blank')}
-              className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white mt-3">
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                Download CV
-              </span>
+              className="px-6 py-3 rounded-full bg-surface border border-line text-ink font-bold transition-all duration-300 hover:-translate-y-0.5 hover:border-primary">
+              Download CV
             </button>
           </div>
         </motion.div>
 
         {/* Image block */}
-        <motion.div 
-          initial={{ scale: 0.5, opacity: 0 }} 
-          animate={{ scale: 1, opacity: 1 }} 
-          transition={{ duration: 0.5 }} 
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
           className="md:col-span-5 place-self-center mt-4 md:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[350px] lg:h-[350px] relative">
-            <Image 
-              src="/images/hero-image.png" 
-              alt="Hero Image" 
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={250}
-              height={250}
+          <div className="relative w-[250px] h-[250px] lg:w-[350px] lg:h-[350px]">
+            {/* Morphing glow behind the photo */}
+            <div
+              className="about-graphic-blob absolute -inset-4 opacity-70 blur-2xl"
+              style={{ background: "linear-gradient(135deg, var(--primary-soft), var(--secondary))" }}
+              aria-hidden="true"
             />
+
+            {/* Floating sparkle particles */}
+            <span className="sparkle" style={{ top: "-4%", right: "4%", width: 14, height: 14, "--sparkle-color": "var(--accent)", animationDuration: "2.6s", animationDelay: "0s" }} aria-hidden="true" />
+            <span className="sparkle" style={{ top: "18%", right: "-6%", width: 9, height: 9, "--sparkle-color": "var(--primary)", animationDuration: "3.1s", animationDelay: "-1s" }} aria-hidden="true" />
+            <span className="sparkle" style={{ bottom: "10%", left: "-5%", width: 12, height: 12, "--sparkle-color": "var(--secondary)", animationDuration: "2.8s", animationDelay: "-0.6s" }} aria-hidden="true" />
+            <span className="sparkle" style={{ bottom: "-3%", left: "20%", width: 8, height: 8, "--sparkle-color": "var(--accent)", animationDuration: "3.4s", animationDelay: "-2s" }} aria-hidden="true" />
+
+            {/* Photo, blob-masked */}
+            <div className="relative w-full h-full overflow-hidden border-4 border-surface shadow-xl rounded-[38%_62%_63%_37%/41%_44%_56%_59%]">
+              <Image
+                src="/images/Reeba_Prof_Photo.jpeg"
+                alt="Reeba Qureshi"
+                fill
+                sizes="(min-width: 1024px) 350px, 250px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </motion.div>
       </div>

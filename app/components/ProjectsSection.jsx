@@ -119,10 +119,10 @@ export default function ProjectsSection() {
   const filteredProjects = projectData.filter((project) => tag === 'All' || project.tag.includes(tag));
 
   return (
-    <section id="projects" className="bg-[#121212] text-white">
-      <div className="px-4 md:px-8 lg:px-12 py-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">My Projects</h2>
-        <div className="text-white flex flex-row flex-wrap justify-center items-center gap-2 py-6">
+    <section id="projects" className="text-ink py-16">
+      <div className="px-4 md:px-8 lg:px-12">
+        <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-8 text-center">My Projects</h2>
+        <div className="flex flex-row flex-wrap justify-center items-center gap-2 py-6">
           {['All', 'AI/ML', 'Web', 'Computer Vision', 'NLP', 'Open Source'].map((item) => (
             <ProjectTag
               key={item}
@@ -140,13 +140,12 @@ export default function ProjectsSection() {
           key={tag} // Ensures re-animation when tag changes
         >
           {filteredProjects.map((project) => (
-            <motion.div key={project.id} variants={cardVariants}>
+            <motion.div key={project.id} variants={cardVariants} className="h-full">
               <ProjectCard
                 title={project.title}
                 description={project.description}
                 imgUrl={project.image}
                 gitUrl={project.gitUrl}
-                previewUrl={project.previewUrl}
               />
             </motion.div>
           ))}

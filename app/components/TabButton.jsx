@@ -8,13 +8,13 @@ const variants = {
 
 export default function TabButton({ active, selectTab, children }) {
   const buttonClasses = active
-    ? "text-white"
-    : "text-[#ADB7BE] hover:text-white";
+    ? "text-ink"
+    : "text-ink-soft hover:text-primary";
 
   return (
     <button
       onClick={selectTab}
-      className={`mr-3 font-semibold ${buttonClasses} flex flex-col items-start`}
+      className={`mr-3 font-heading font-semibold ${buttonClasses} flex flex-col items-start`}
     >
       {children}
       <div className="w-full overflow-hidden mt-2">
@@ -22,7 +22,7 @@ export default function TabButton({ active, selectTab, children }) {
           initial="default"
           animate={active ? "active" : "default"}
           variants={variants}
-          className="h-1 bg-purple-500"
+          className="h-1 bg-primary rounded-full"
           transition={{ duration: 0.3, ease: "easeInOut" }}
         />
       </div>

@@ -1,22 +1,18 @@
-"use client";
 import React from "react";
 
 export default function SkillCard({ title, description, skills }) {
   return (
-    <div className="bg-[#181818] p-5 rounded-lg shadow-md hover:shadow-purple-500 hover:scale-105 transition-all duration-300 border border-gray-700 text-center w-full">
-      <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-      <p className="text-gray-400 text-sm mb-4">{description}</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+    <div className="group relative bg-surface border border-line rounded-2xl p-5 h-full overflow-hidden transition-all duration-500 ease-out hover:border-primary hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_16px_32px_-16px_var(--primary)]">
+      <h3 className="font-heading text-base font-semibold text-ink mb-1">{title}</h3>
+      <p className="text-ink-soft text-xs mb-4">{description}</p>
+      <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
-          <a
+          <span
             key={skill}
-            href={`https://www.google.com/search?q=${encodeURIComponent(skill)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent hover:from-indigo-300 hover:to-purple-300 hover:underline transition duration-200"
+            className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary-soft text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-surface"
           >
             {skill}
-          </a>
+          </span>
         ))}
       </div>
     </div>

@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import SkillCard from "./SkillCard";
 
@@ -39,38 +38,35 @@ const programmingLanguages = ["Python", "Java", "C++", "C", "JavaScript", "PHP"]
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="text-white py-10 px-4 xl:px-16">
-      <h2 className="text-4xl font-bold text-center mb-8 text-white">Skills</h2>
+    <section id="skills" className="py-16 px-4 xl:px-16">
+      <h2 className="font-heading text-3xl font-semibold text-center mb-12 text-ink">Skills</h2>
 
-      {/* Programming Languages Section */}
-      <div className="bg-[#181818] p-5 rounded-lg shadow-md hover:shadow-purple-500 hover:scale-105 transition-all duration-300 border border-gray-700 mb-8 text-center">
-        <h3 className="text-lg font-bold text-white mb-2">Programming Languages</h3>
-        <p className="text-gray-400 text-sm mb-4">Proficiency in multiple programming languages.</p>
-        <div className="flex flex-wrap justify-center gap-2">
-          {programmingLanguages.map((lang) => (
-            <a
-              key={lang}
-              href={`https://www.google.com/search?q=${encodeURIComponent(lang)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-purple-500 text-white text-sm px-4 py-2 rounded-full hover:brightness-110 transition duration-200"
-            >
-              {lang}
-            </a>
+      <div className="max-w-5xl mx-auto">
+        <div className="bg-surface border border-line rounded-2xl p-6 mb-8 text-center">
+          <h3 className="font-heading text-base font-semibold text-ink mb-1">Programming Languages</h3>
+          <p className="text-ink-soft text-xs mb-4">Proficiency in multiple programming languages.</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {programmingLanguages.map((lang) => (
+              <span
+                key={lang}
+                className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary-soft text-primary"
+              >
+                {lang}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillsData.map((skillSet) => (
+            <SkillCard
+              key={skillSet.title}
+              title={skillSet.title}
+              description={skillSet.description}
+              skills={skillSet.skills}
+            />
           ))}
         </div>
-      </div>
-
-      {/* Skill Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {skillsData.map((skillSet) => (
-          <SkillCard
-            key={skillSet.title}
-            title={skillSet.title}
-            description={skillSet.description}
-            skills={skillSet.skills}
-          />
-        ))}
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import NavLink from './NavLink';
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 import MenuOverlay from './MenuOverlay';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
     { title: "About", path: "#about" },
@@ -20,31 +21,31 @@ export default function Navbar() {
     const [navbarOpen, setNavbarOpen] = useState(false);
 
     return (
-        <nav className='fixed top-0 left-0 right-0 z-10 border-[#33353F] bg-[#121212] bg-opacity-100'>
+        <nav className='fixed top-0 left-0 right-0 z-30 border-b border-line bg-bg/85 backdrop-blur-md'>
             <div className='flex flex-wrap lg:py-4 items-center justify-between mx-auto px-4 py-2'>
                 {/* Logo */}
                 <Link href={"/"} className='flex items-center'>
-                    <Image 
-                        src="/images/logo.png" 
-                        alt="Logo" 
+                    <Image
+                        src="/images/logo.png"
+                        alt="Logo"
                         width={50}  // Adjust size as needed
                         height={50} // Adjust size as needed
                         priority
                     />
                 </Link>
-                
-                {/* Mobile Menu Button */}
-                <div className='block md:hidden'>
-                    <button 
-                        onClick={() => setNavbarOpen(!navbarOpen)} 
-                        className='flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white'
+
+                <div className='flex items-center gap-2 md:hidden'>
+                    <ThemeToggle />
+                    <button
+                        onClick={() => setNavbarOpen(!navbarOpen)}
+                        className='flex items-center px-3 py-2 border rounded-full border-line text-ink-soft hover:text-primary hover:border-primary'
                     >
                         {navbarOpen ? <XMarkIcon className="h-6 w-6"/> : <Bars3Icon className="h-6 w-6"/>}
                     </button>
                 </div>
 
                 {/* Desktop Menu */}
-                <div className='hidden md:block md:w-auto'>
+                <div className='hidden md:flex md:items-center md:gap-6'>
                     <ul className='flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0'>
                         {navLinks.map((link, index) => (
                             <li key={index}>
@@ -52,6 +53,7 @@ export default function Navbar() {
                             </li>
                         ))}
                     </ul>
+                    <ThemeToggle />
                 </div>
             </div>
 

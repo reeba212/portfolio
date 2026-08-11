@@ -1,24 +1,114 @@
 @import "tailwindcss";
 
 :root {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-nunito);
+  --font-heading: var(--font-josefin);
+
+  /* Kawaii Dream (light) */
+  --bg: #FFF6FB;
+  --surface: #FFFFFF;
+  --surface-soft: #FFEAF5;
+  --ink: #4A2E45;
+  --ink-soft: #8C6C87;
+  --primary: #F075AB;
+  --primary-soft: #FFD3EA;
+  --secondary: #B79CEB;
+  --accent: #7FDDC0;
+  --line: #F5D9EC;
 }
 
-:root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* Kawaii Dream (dark) — same palette as light, just a black ground */
+    --bg: #121212;
+    --surface: #1E1E22;
+    --surface-soft: #26262B;
+    --ink: #F3EFF2;
+    --ink-soft: #B8AFB5;
+    --primary: #F075AB;
+    --primary-soft: #FFD3EA;
+    --secondary: #B79CEB;
+    --accent: #7FDDC0;
+    --line: #2E2E33;
   }
 }
 
+:root[data-theme="dark"] {
+  /* Kawaii Dream (dark) — same palette as light, just a black ground */
+  --bg: #121212;
+  --surface: #1E1E22;
+  --surface-soft: #26262B;
+  --ink: #F3EFF2;
+  --ink-soft: #B8AFB5;
+  --primary: #F075AB;
+  --primary-soft: #FFD3EA;
+  --secondary: #B79CEB;
+  --accent: #7FDDC0;
+  --line: #2E2E33;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-line: var(--line);
+  --font-heading: var(--font-josefin);
+  --font-body: var(--font-nunito);
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--line) 1.6px, transparent 1.6px);
+  background-size: 28px 28px;
+  animation: grid-pan 22s linear infinite;
+  font-family: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+@keyframes grid-pan {
+  from { background-position: 0 0; }
+  to { background-position: 140px 140px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}
+
+@keyframes about-blob-morph {
+  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%; transform: rotate(0deg); }
+  50% { border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; transform: rotate(8deg); }
+}
+.about-graphic-blob {
+  animation: about-blob-morph 8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-graphic-blob { animation: none; }
+}
+
+@keyframes sparkle-twinkle {
+  0% { transform: scale(0) translateY(0) rotate(0deg); opacity: 0; }
+  20% { transform: scale(1) translateY(-2px) rotate(20deg); opacity: 1; }
+  50% { transform: scale(.65) translateY(-6px) rotate(45deg); opacity: .75; }
+  80% { transform: scale(1) translateY(-11px) rotate(70deg); opacity: 1; }
+  100% { transform: scale(0) translateY(-15px) rotate(90deg); opacity: 0; }
+}
+.sparkle {
+  position: absolute;
+  display: block;
+  background: var(--sparkle-color, var(--accent));
+  clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
+  filter: drop-shadow(0 0 4px var(--sparkle-color, var(--accent)));
+  animation-name: sparkle-twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sparkle { animation: none; opacity: .6; }
 }

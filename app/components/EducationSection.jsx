@@ -1,51 +1,131 @@
-// app/components/EducationSection.jsx
+"use client";
 
-import React from 'react';
-import educationData from './Education';
+import React, { useState } from "react";
+import educationData from "./Education";
+import DetailDrawer from "./DetailDrawer";
+
+const SEALS = ["🎓", "🏛️", "📘"];
 
 const EducationSection = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const active = activeIndex !== null ? educationData[activeIndex] : null;
+
   return (
-    <section className="py-12 bg-[#181818]" id="education">
+    <section className="py-16" id="education">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-white mb-8 text-center">Education</h2>
-        <div className="space-y-8">
-          {educationData.map((edu, index) => (
-            <div
-              key={index}
-              className="bg-[#181818] p-6 rounded-lg shadow-md hover:shadow-pink-500 hover:scale-105 transition-all duration-300 border border-gray-700"
+        <h2 className="font-heading text-3xl font-semibold text-ink mb-12 text-center">
+          Education
+        </h2>
+
+        <div className="flex flex-wrap justify-center gap-6">
+          {educationData.map((edu, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveIndex(i)}
+              className="relative w-full sm:w-64 text-center bg-surface border border-line rounded-2xl p-6 hover:-translate-y-1 hover:border-primary transition-all duration-300"
             >
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
-                <div>
-                  <h3 className="text-xl font-bold text-white">{edu.degree}</h3>
-                  <p className="bg-gradient-to-r from-pink-400 to-purple-400 text-transparent bg-clip-text font-semibold">
-                    {edu.school}
-                  </p>
-                </div>
-                <span className="text-gray-400 text-sm mt-2 sm:mt-0">{edu.duration}</span>
-              </div>
-              <p className="text-gray-400 text-sm mt-1">{edu.location}</p>
-
-              <p className="text-gray-300 text-sm mt-4">{edu.description}</p>
-
-              {edu.links && Object.keys(edu.links).length > 0 && (
-                <div className="mt-4 flex flex-wrap gap-3 text-sm">
-                  {Object.entries(edu.links).map(([label, url], i) => (
-                    <a
-                      key={i}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-pink-400 hover:underline"
-                    >
-                      {label.charAt(0).toUpperCase() + label.slice(1)}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
+              <span
+                aria-hidden="true"
+                className="absolute inset-2 rounded-xl border border-dashed border-line pointer-events-none"
+              />
+              <span
+                className="relative z-10 mx-auto mb-4 flex items-center justify-center w-11 h-11 rounded-full text-lg"
+                style={{
+                  background:
+                    "conic-gradient(var(--primary), var(--secondary), var(--accent), var(--primary))",
+                }}
+              >
+                {SEALS[i % SEALS.length]}
+              </span>
+              <h3 className="relative z-10 font-heading font-semibold text-ink text-balance">
+                {edu.degree}
+              </h3>
+              <p className="relative z-10 text-primary text-sm font-semibold mt-1">{edu.school}</p>
+              <p className="relative z-10 text-ink-soft text-xs mt-2">{edu.duration}</p>
+              <span className="relative z-10 inline-block mt-3 text-xs font-bold text-primary">
+                View details →
+              </span>
+            </button>
           ))}
         </div>
       </div>
+
+      <DetailDrawer
+        open={active !== null}
+        onClose={() => setActiveIndex(null)}
+        eyebrow={active?.duration}
+        title={active?.degree}
+        subtitle={active ? `${active.school} · ${active.location}` : ""}
+        sections={
+          active
+            ? [
+                active.note || active.highlights
+                  ? {
+                      heading: "Focus & Highlights",
+                      body: (
+                        <div className="space-y-3">
+                          {active.note && <p>{active.note}</p>}
+                          {active.highlights && (
+                            <ul className="space-y-2 list-disc list-inside">
+                              {active.highlights.map((h, i) => (
+                                <li key={i}>{h}</li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ),
+                    }
+                  : {
+                      heading: "Focus & Highlights",
+                      placeholder: true,
+                      body: "Add coursework, thesis/capstone, or standout projects here.",
+                    },
+                { heading: "Details", body: active.description },
+                ...(active.coursework
+                  ? [
+                      {
+                        heading: "Coursework",
+                        body: (
+                          <div className="flex flex-wrap gap-2">
+                            {active.coursework.map((c) => (
+                              <span
+                                key={c}
+                                className="text-xs font-medium px-2.5 py-1 rounded-full border border-line text-ink-soft"
+                              >
+                                {c}
+                              </span>
+                            ))}
+                          </div>
+                        ),
+                      },
+                    ]
+                  : []),
+                ...(active.links && Object.keys(active.links).length
+                  ? [
+                      {
+                        heading: "Links",
+                        body: (
+                          <div className="flex flex-wrap gap-3">
+                            {Object.entries(active.links).map(([label, url]) => (
+                              <a
+                                key={label}
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary text-sm font-semibold hover:underline"
+                              >
+                                {label.charAt(0).toUpperCase() + label.slice(1)}
+                              </a>
+                            ))}
+                          </div>
+                        ),
+                      },
+                    ]
+                  : []),
+              ]
+            : []
+        }
+      />
     </section>
   );
 };

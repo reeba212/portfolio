@@ -1,53 +1,57 @@
 'use client';
 import React from 'react';
-import { FaTrophy, FaStar, FaBook, FaMedal, FaRobot, FaLaptopCode } from 'react-icons/fa';
+import { FaTrophy, FaStar, FaBook, FaMedal, FaRobot, FaLaptopCode, FaUsers } from 'react-icons/fa';
 
 export default function Achievements() {
   const achievements = [
     {
-      icon: <FaTrophy className="text-pink-300" />,
+      icon: <FaUsers className="text-primary" />,
+      text: 'Became team lead within a year of joining, for a critical project managing datacenter operations and replacing legacy architecture.',
+    },
+    {
+      icon: <FaTrophy className="text-primary" />,
       text: 'Selected for GSoC twice (2023 & 2024) with Apache Beam, working under the guidance of Google software engineers.',
     },
     {
-      icon: <FaStar className="text-pink-300" />,
+      icon: <FaStar className="text-primary" />,
       text: 'Top 2.5% of candidates in Google Girl Hackathon 2023.',
     },
     {
-      icon: <FaRobot className="text-pink-300" />,
+      icon: <FaRobot className="text-primary" />,
       text: 'Qualified AWS DeepRacer, earned AWS AI/ML Scholarship, and completed AI Programming in Python and AWS Machine Learning Fundamentals nanodegrees.',
     },
     {
-      icon: <FaMedal className="text-pink-300" />,
+      icon: <FaMedal className="text-primary" />,
       text: 'Consistently ranked in the top 2% of my class; currently ranked 2nd out of 120+ students in my branch.',
     },
     {
-      icon: <FaBook className="text-pink-300" />,
-      text: 'Published two research papers.',
+      icon: <FaBook className="text-primary" />,
+      text: 'Published three research papers, one of which I presented at a conference.',
     },
     {
-      icon: <FaLaptopCode className="text-pink-300" />,
+      icon: <FaLaptopCode className="text-primary" />,
       text: 'Selected as a Beta Microsoft Learn Student Ambassador (MLSA).',
     },
     {
-      icon: <FaTrophy className="text-pink-300" />,
+      icon: <FaTrophy className="text-primary" />,
       text: 'Top 10 teams in WiEHack 5.0, an international hybrid hackathon.',
     },
   ];
 
   return (
-    <section className="py-12 text-white" id="achievements">
+    <section className="py-16 text-ink" id="achievements">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold mb-8 text-center text-white">Achievements</h2>
-        <ul className="space-y-6">
+        <h2 className="font-heading text-4xl font-semibold mb-10 text-center text-ink">Achievements</h2>
+        <ul className="space-y-4">
           {achievements.map((achievement, index) => (
             <li
               key={index}
-              className="p-5 bg-[#181818] bg-opacity-60 rounded-lg shadow-md border border-[#3E075F] transition-transform transform hover:scale-105 hover:shadow-pink-500 flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4"
+              className="p-5 bg-surface rounded-2xl border border-line transition-all duration-300 hover:border-primary hover:-translate-y-0.5 flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4"
             >
               {/* Icon */}
               <div className="text-3xl">{achievement.icon}</div>
 
-              <p className="text-lg text-gray-300 text-center sm:text-left">{achievement.text}</p>
+              <p className="text-base text-ink-soft text-center sm:text-left leading-relaxed">{achievement.text}</p>
             </li>
           ))}
         </ul>
