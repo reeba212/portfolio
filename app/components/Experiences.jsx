@@ -128,7 +128,7 @@ const Experiences = () => {
 
   return (
     <section className="pt-4 pb-16" id="experiences">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-0 sm:px-4">
         <h2 className="font-heading text-3xl font-semibold text-ink mb-12 text-center">
           Experience
         </h2>
@@ -171,7 +171,7 @@ const Experiences = () => {
 
                   <button
                     onClick={() => setActiveIndex(i)}
-                    className="w-full text-left bg-surface border border-line rounded-2xl p-6 hover:border-primary hover:-translate-y-0.5 transition-all duration-300"
+                    className="w-full text-left bg-surface border border-line rounded-2xl p-4 sm:p-6 hover:border-primary hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <div className="grid sm:grid-cols-[minmax(150px,190px)_1fr] gap-4 sm:gap-6">
                       <div>

@@ -17,7 +17,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5 }} 
           className="md:col-span-7 place-self-center text-center md:text-left"
         >
-          <h1 className="font-heading text-ink mb-4 text-5xl sm:text-4xl md:text-4xl lg:text-5xl lg:leading-normal font-semibold text-balance">
+          <h1 className="font-heading text-ink mb-4 text-3xl sm:text-4xl md:text-4xl lg:text-5xl lg:leading-normal font-semibold text-balance">
             <span className="text-primary">
               Hello, I'm
             </span>
